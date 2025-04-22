@@ -10,6 +10,8 @@ import Shimmer from "./component/Shimmer.js";
 
 const App=()=>{
     const [listcard,setListCard]=useState([]);
+    const [readtext,settext]=useState("")
+    const [filterreslist,setfilterreslist]=useState([]);
      
     useEffect(()=>{
         fertchData();
@@ -20,7 +22,10 @@ const App=()=>{
         console.log(data)
         const json= await data.json();
         console.log(json)
-        setListCard(json.data.cards.filter((ele,ind)=>ind>1?ele:false))
+        const filtering=json.data.cards.filter((ele,ind)=>ind>1?ele:false)
+        setfilterreslist(filtering)
+        return (setListCard(filtering))
+                
     }
     
     if(listcard.length===0)
@@ -34,17 +39,25 @@ const App=()=>{
     return (
         <div id="parent">
             <Nav></Nav>
+             <div>
             <button id="btn" onClick={()=>{
                 //setListCard(listcard.filter(elem=>elem.card.card.info.avgRating>4))
                 const filtered=listcard.filter(elem=>elem.card.card.info.avgRating>4)
                 return (setListCard(filtered));
             }}>Top Rate restaurants</button>
             
-            <Srch></Srch>
+            <input type="text" value={readtext} onChange={(elem)=>{settext(elem.target.value)}}></input>
+            <button onClick={()=>{
+                console.log(listcard[0].card.card.info.name.includes(readtext))
+                return (setfilterreslist(listcard.filter((eleme)=>eleme.card.card.info.name.toLowerCase().includes(readtext.toLowerCase()))))
+            
+                    
+            }}>Search</button>
+            </div>
             <div id="deco">
             <div id="parentcard">
            {
-            listcard.map((elem,ind) => <Cardy key={elem?.card?.card?.info?.id} resdata={elem}/>)
+            filterreslist.map((elem,ind) => <Cardy key={elem?.card?.card?.info?.id} resdata={elem}/>)
            }
             </div>
             </div>
