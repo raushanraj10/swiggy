@@ -1,0 +1,2 @@
+export const Nav_url="https://t4.ftcdn.net/jpg/02/76/34/55/240_F_276345533_gQr0R2h68cDY1MRE1QyR7ydS2Xsiwx7T.jpg";
+export const CDN_URL="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"

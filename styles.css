@@ -1,0 +1,146 @@
+*{
+    background-color: rgb(110, 219, 246);
+}
+#nav1{
+    display: flex;
+    justify-content: space-between;
+}
+#image{
+    height:200px;
+    width: 200px;
+    border-radius: 50%;
+   
+}
+#hi{
+    width: 150px;
+    height: 150px;
+}
+#tool{
+    display: flex;
+    margin: 50px;
+    gap: 20px;
+   
+}
+.ab{
+    text-decoration:none;
+    font-size: 20px;
+}
+#cart{
+    margin-top:-6px;
+}
+input{
+    margin-left: 40%;
+}
+#b{
+    margin-left: 10px;
+}
+button:hover{
+    color: slateblue;
+}
+#cardlist{
+    width: 200px;
+    
+    margin: 20px;
+    margin-top:50px;
+    
+}
+#cardlist:hover{
+    border-radius: 5%;
+    border: 3px solid black;
+}
+#parentcard{
+    display: flex;  
+    flex-wrap: wrap;
+}
+#food{
+    width:200px;
+    height: 180px;
+    border-radius: 6%;
+}
+#text{
+    margin:0;
+}
+#variety{
+    margin: 0;
+}
+#star{
+    display: flex;
+    justify-content: space-between;
+}
+.rate{
+    margin:5px;
+}
+.raty{
+    margin:3px;
+}
+#deco{
+    margin: 10px;
+    border-radius: 2%;
+    
+}
+#content{
+    border-radius: 2%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3))
+
+}
+h5{
+    margin: 20px;
+}
+#parent{
+    margin: 0;
+    padding: 0;
+    
+}
+#btn{
+    margin-top: 0px;
+}
+#btn:hover{
+    background-color: rgb(61, 189, 14);
+    color: rgb(18, 1, 36);
+}
+#yup{
+    width:200px;
+    
+}
+.UI{
+    width: 0;
+    color:rgb(211, 211, 199)
+}
+.sh-card{
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+    background-color: rgb(79, 79, 80);
+    border-radius: 2%;
+    
+}
+#sh-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 20px;
+    margin-top: 70%;
+    margin-left: 42%;
+    aspect-ratio: 1;
+    animation: l13-0 2s linear infinite;
+  }
+  .loader::before,
+  .loader::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(at 30% 30%,#0000,#000a) red;
+    animation: l13-1 0.5s cubic-bezier(.5,-500,.5,500) infinite;
+  }
+  .loader::after {
+    animation-delay: -0.15s;
+  }
+  @keyframes l13-0 { 
+    100% { transform:rotate(360deg)} 
+  }
+  @keyframes l13-1 { 
+    100% { transform:translate(0.5px)} 
+  }
