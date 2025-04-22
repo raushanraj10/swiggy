@@ -43,7 +43,7 @@ const App=()=>{
             <button id="btn" onClick={()=>{
                 //setListCard(listcard.filter(elem=>elem.card.card.info.avgRating>4))
                 const filtered=listcard.filter(elem=>elem.card.card.info.avgRating>4)
-                return (setListCard(filtered));
+                return (setfilterreslist(filtered));
             }}>Top Rate restaurants</button>
             
             <input type="text" value={readtext} onChange={(elem)=>{settext(elem.target.value)}}></input>

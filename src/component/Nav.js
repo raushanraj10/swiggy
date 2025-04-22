@@ -4,6 +4,7 @@ import {Nav_url} from "../utiles/constant"
 const Nav = ()=>{
      const [letlog,set]=useState("Login")
     return (
+      
         <div id="nav1">
           <div id="image">
           <img id ="hi" src={Nav_url}></img>
