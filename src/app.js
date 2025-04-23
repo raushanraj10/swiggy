@@ -7,6 +7,11 @@ import Srch from "./component/Srch.js"
 import Content from "./component/Content.jsx";
 import {useState,useEffect} from "react";
 import Shimmer from "./component/Shimmer.js";
+import { HydratedRouter, RouterProvider } from "react-router";
+import About from "./component/About.js";
+import Contact from "./component/Contact.js";
+import Error from "./component/Error.js";
+import { createBrowserRouter } from "react-router-dom";
 
 const App=()=>{
     const [listcard,setListCard]=useState([]);
@@ -67,5 +72,22 @@ const App=()=>{
     )
 }
 
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <App/>,
+    errorElement:<Error/>,
+  },
+  {
+    path: "/about",
+    element: <About></About>
+  },
+  {
+    path: "/contact",
+    element:<Contact/>
+  },
+])
+
+
 const Root = ReactDOM.createRoot(document.getElementById("root"))
-Root.render(<App></App>)
+Root.render(<RouterProvider router={appRouter}/>)
