@@ -1,6 +1,6 @@
 import { use, useEffect , useState} from "react";
 import Shimmer from "./Shimmer";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 const RestaurantsMenu = ()=>{
     const {resId}=useParams();
     console.log(resId)
@@ -15,16 +15,14 @@ const RestaurantsMenu = ()=>{
         setresinfo(fill)
     }
     console.log("ji")
-    if(restinfo.lenght===0){
+    if(restinfo.length===0){
         return <Shimmer/>
     }
     if(restinfo.length===2){
     console.log("yup")
     const {name,cuisines}= restinfo[0].card.card.info
     const {itemCards}=restinfo[1].groupedCard.cardGroupMap.REGULAR.cards[1].card.card;
-    console.log(restinfo[1].groupedCard.cardGroupMap.REGULAR.cards[1].card.card.itemCards)
     return (
-         
             <div>
             <h1>{name}</h1>
             <h3>{cuisines}</h3>
