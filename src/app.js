@@ -7,7 +7,7 @@ import Srch from "./component/Srch.js"
 import Content from "./component/Content.jsx";
 import {useState,useEffect} from "react";
 import Shimmer from "./component/Shimmer.js";
-import { HydratedRouter, RouterProvider } from "react-router";
+import { HydratedRouter, RouterProvider , Outlet} from "react-router";
 import About from "./component/About.js";
 import Contact from "./component/Contact.js";
 import Error from "./component/Error.js";
@@ -66,7 +66,7 @@ const App=()=>{
            }
             </div>
             </div>
-        <Content></Content>
+        <Outlet/>
         </div>
 
     )
@@ -76,18 +76,27 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <App/>,
+    children:[
+      {
+        path:"content",
+        element:<Content></Content>
+      },
+      {
+        
+        path: "/about",
+        element: <About></About>
+      },
+      {
+        path: "/contact",
+        element:<Contact/>
+      }
+    ],
     errorElement:<Error/>,
   },
-  {
-    path: "/about",
-    element: <About></About>
-  },
-  {
-    path: "/contact",
-    element:<Contact/>
-  },
+  
 ])
 
 
 const Root = ReactDOM.createRoot(document.getElementById("root"))
 Root.render(<RouterProvider router={appRouter}/>)
+
