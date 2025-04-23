@@ -12,6 +12,7 @@ import About from "./component/About.js";
 import Contact from "./component/Contact.js";
 import Error from "./component/Error.js";
 import { createBrowserRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const App=()=>{
     const [listcard,setListCard]=useState([]);
@@ -43,6 +44,7 @@ const App=()=>{
         }
     return (
         <div id="parent">
+          <Link></Link>
             <Nav></Nav>
              <div>
             <button id="btn" onClick={()=>{
