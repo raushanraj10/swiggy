@@ -13,6 +13,7 @@ import Contact from "./component/Contact.js";
 import Error from "./component/Error.js";
 import { createBrowserRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import RestaurantsMenu from "./component/RestaurantsMenu.js";
 
 const App=()=>{
     const [listcard,setListCard]=useState([]);
@@ -64,7 +65,7 @@ const App=()=>{
             <div id="deco">
             <div id="parentcard">
            {
-            filterreslist.map((elem,ind) => <Cardy key={elem?.card?.card?.info?.id} resdata={elem}/>)
+            filterreslist.map((elem,ind) => <a key={elem?.card?.card?.info?.id} href={"/restaurant_id=/"+elem.card.card.info?.id}><Cardy  resdata={elem}/></a>)
            }
             </div>
             </div>
@@ -91,7 +92,11 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element:<Contact/>
-      }
+      },
+      {
+        path:"/restaurant_id=/:resId",
+        element:<RestaurantsMenu/>
+      },
     ],
     errorElement:<Error/>,
   },
