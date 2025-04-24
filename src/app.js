@@ -56,7 +56,6 @@ const App=()=>{
             
             <input type="text" value={readtext} onChange={(elem)=>{settext(elem.target.value)}}></input>
             <button onClick={()=>{
-                console.log(listcard[0].card.card.info.name.includes(readtext))
                 return (setfilterreslist(listcard.filter((eleme)=>eleme.card.card.info.name.toLowerCase().includes(readtext.toLowerCase()))))
             
                     
@@ -70,6 +69,7 @@ const App=()=>{
             </div>
             </div>
         <Outlet/>
+        <Content/>
         </div>
 
     )
@@ -80,10 +80,7 @@ const appRouter = createBrowserRouter([
     path: "/",
     element: <App/>,
     children:[
-      {
-        path:"content",
-        element:<Content></Content>
-      },
+      
       {
         
         path: "/about",

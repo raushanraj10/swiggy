@@ -10,7 +10,7 @@ const Nav = ()=>{
           <img id ="hi" src={Nav_url}></img>
           </div>
           <div id="tool">
-           <Link to="/content" className="ab">Home</Link>
+           <Link to="/" className="ab">Home</Link>
            <Link to="/about" className="ab" >About</Link>
            <Link to="/contact" className="ab" >Contact</Link>
            <Link className="ab" id= "cart" to="#">🛒</Link>
