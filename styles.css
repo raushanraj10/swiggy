@@ -145,4 +145,11 @@ h5{
     background-color: rgb(39, 39, 239);
     color: rgb(21, 233, 187);
   }
- 
+.ul{
+    height: auto;
+    width: auto;
+}
+.it{
+    height: auto;
+    width: auto;
+}

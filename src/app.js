@@ -45,7 +45,6 @@ const App=()=>{
         }
     return (
         <div id="parent">
-          <Link></Link>
             <Nav></Nav>
              <div>
             <button id="btn" onClick={()=>{
